@@ -1,0 +1,1 @@
+java -classpath lib/xercesImpl-2.9.1.jar:lib/xml-apis-2.9.1.jar:lib/castor-1.3-core.jar:lib/castor-1.3.jar:lib/commons-logging-1.1.1.jar:lib/jakarta-oro2.0.8.jar:glossary.jar org.svg.glossary.WriteTex aikido.xml

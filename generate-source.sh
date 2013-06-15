@@ -1,0 +1,2 @@
+rm -rf src/org/svg/glossary/xml
+java -classpath lib/velocity1.5.jar:lib/xercesImpl-2.9.1.jar:lib/xml-apis-2.9.1.jar:lib/castor-1.3-core.jar:lib/castor-1.3.jar:lib/castor-1.3-codegen.jar:lib/castor-1.3-xml-schema.jar:lib/jakarta-oro-2.0.8.jar:lib/commons-logging-1.1.1.jar org.exolab.castor.builder.SourceGeneratorMain -i glossary.xsd -package org.svg.glossary.xml -dest src -line-separator unix -types j2 -verbose -generateImportedSchemas -f

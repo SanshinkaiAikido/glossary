@@ -1,0 +1,6 @@
+#Sat Jun 15 18:27:47 CEST 2013
+org.svg.glossary.xml.List=org.svg.glossary.xml.descriptors.ListDescriptor
+org.svg.glossary.xml.Extra=org.svg.glossary.xml.descriptors.ExtraDescriptor
+org.svg.glossary.xml.Local=org.svg.glossary.xml.descriptors.LocalDescriptor
+org.svg.glossary.xml.Item=org.svg.glossary.xml.descriptors.ItemDescriptor
+org.svg.glossary.xml.Glossary=org.svg.glossary.xml.descriptors.GlossaryDescriptor
