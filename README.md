@@ -14,3 +14,11 @@ After changes in XML:
 
     ./validate-xml.sh
     ./write-files.sh
+
+License
+-------
+http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+Author
+------
+Sander van Geloven <utrecht@sanshinkai.eu>
