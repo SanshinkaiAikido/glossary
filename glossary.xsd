@@ -1,69 +1,80 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:element name="glossary">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="extra" minOccurs="0" maxOccurs="1"/>
-				<xs:element ref="list" minOccurs="0" maxOccurs="unbounded"/>
-			</xs:sequence>
+    <xs:element name="glossary">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="extra" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="list" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
                         <xs:attribute name="name" type="xs:string" use="required"/>
                         <xs:attribute name="author" type="xs:string" use="required"/>
                         <xs:attribute name="version" type="xs:string" use="required"/>
                         <xs:attribute name="date" type="xs:string" use="required"/>
 
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="extra">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="item" minOccurs="0" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="list">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="local" minOccurs="1" maxOccurs="unbounded"/>
-				<xs:element ref="item" minOccurs="0" maxOccurs="unbounded"/>
-			</xs:sequence>
-			<xs:attribute ref="id" use="required"/>
-			<xs:attribute name="romaji" type="xs:string" use="required"/>
-			<xs:attribute name="kanji" type="xs:string" use="required"/>
-			<xs:attribute name="show" type="xs:boolean" use="optional"/>
-			<xs:attribute name="gtl" type="xs:boolean" use="optional"/>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="item">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="local" minOccurs="1" maxOccurs="unbounded"/>
-			</xs:sequence>
-			<xs:attribute ref="id" use="required"/>
-			<xs:attribute name="romaji" type="xs:string" use="required"/>
-			<xs:attribute name="kanji" type="xs:string" use="required"/>
-			<xs:attribute name="show" type="xs:boolean" use="optional"/>
-			<xs:attribute name="gtl" type="xs:boolean" use="optional"/>
-		</xs:complexType>
-	</xs:element>
-	<xs:attribute name="id">
-		<xs:simpleType>
-			<xs:restriction base="xs:ID">
-				<xs:minLength value="1"/>
-				<xs:maxLength value="1"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:attribute>
-	<xs:element name="local">
-		<xs:complexType>
-			<xs:attribute name="lang" use="required">
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:pattern value="[a-z][a-z]"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:attribute>
-			<xs:attribute name="name" type="xs:string" use="optional"/>
-			<xs:attribute name="lit" type="xs:string" use="optional"/>
-		</xs:complexType>
-	</xs:element>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="extra">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="item" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="list">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="local" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element ref="item" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="romaji" type="xs:string" use="required"/>
+            <xs:attribute name="kanji" type="xs:string" use="required"/>
+            <xs:attribute name="symbols" type="xs:string" use="optional"/>
+            <xs:attribute name="show" type="xs:boolean" use="optional"/>
+            <xs:attribute name="gtl" type="xs:boolean" use="optional"/>
+            <xs:attribute name="first" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="item">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="local" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="romaji" type="xs:string" use="required"/>
+            <xs:attribute name="kanji" type="xs:string" use="required"/>
+            <xs:attribute name="symbols" type="xs:string" use="optional"/>
+            <xs:attribute name="show" type="xs:boolean" use="optional"/>
+            <xs:attribute name="gtl" type="xs:boolean" use="optional"/>
+            <xs:attribute name="first" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="local">
+        <xs:complexType>
+            <xs:attribute name="lang" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[a-z][a-z]"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="name" type="xs:string" use="optional"/>
+            <xs:attribute name="lit" type="xs:string" use="optional"/>
+            <xs:attribute name="wiki" type="xs:string" use="optional"/>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
